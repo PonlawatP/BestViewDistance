@@ -1,6 +1,7 @@
 package me.lxct.bestviewdistance.event;
 
 import me.lxct.bestviewdistance.functions.BVDPlayer;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -11,7 +12,7 @@ import static me.lxct.bestviewdistance.functions.data.Variable.*;
 
 
 public class OnJoin implements Listener {
-    @EventHandler(priority = EventPriority.MONITOR)
+    @EventHandler(priority = EventPriority.LOWEST)
     public static void onPlayerJoin(final PlayerJoinEvent e) {
         final Player p = e.getPlayer();
         onlinePlayers.remove(p);  // Prevent from duplications
